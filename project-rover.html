@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modular Autonomous Rover · Team Bumblebee</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <style>
     *,
@@ -25,7 +25,7 @@
       --gray-light: #f1f5f9;
       --border: #e2e8f0;
       --font-display: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
     }
 
     html {
@@ -190,7 +190,7 @@
 
     .scard h4 {
       font-family: var(--font-display);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 700;
       margin-bottom: 14px;
     }
@@ -200,7 +200,7 @@
       justify-content: space-between;
       padding: 8px 0;
       border-bottom: 1px solid var(--border);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
     }
 
     .srow:last-child {
@@ -223,16 +223,17 @@
 
     .scard-dark h4 {
       font-family: var(--font-display);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 700;
       color: white;
       margin-bottom: 6px;
     }
 
     .scard-dark p {
-      font-size: 0.78rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
       color: #94a3b8;
-      line-height: 1.55;
+      line-height: 1.65;
       margin-bottom: 14px;
     }
 
@@ -246,6 +247,47 @@
       text-decoration: none;
       display: block;
       text-align: center;
+    }
+
+    .build-log-widget {
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--blue);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .build-log-widget h4 {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .build-log-widget p {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .btn-blue:hover {
+      background: #1d4ed8;
     }
 
     /* HEADER */
@@ -284,17 +326,18 @@
 
     h1 {
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 800;
       line-height: 1.1;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
     }
 
     .sub {
-      font-size: 0.92rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
       color: var(--gray);
       line-height: 1.7;
-      max-width: 560px;
+      max-width: 520px;
       margin-bottom: 20px;
     }
 
@@ -378,23 +421,24 @@
     }
 
     .sec-label {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--blue);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .sec h2 {
       font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
       font-weight: 800;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .sec p {
-      font-size: 0.88rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
       color: var(--gray);
       line-height: 1.75;
       margin-bottom: 10px;
@@ -407,7 +451,7 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       overflow: hidden;
-      font-size: 0.82rem;
+      font-size: 0.9rem;
       margin-top: 12px;
     }
 
@@ -415,8 +459,8 @@
       padding: 9px 13px;
       text-align: left;
       background: var(--gray-light);
-      font-family: var(--font-display);
-      font-size: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
       font-weight: 700;
     }
 
@@ -426,6 +470,7 @@
     }
 
     .tbl td {
+      font-family: var(--font-body);
       padding: 9px 13px;
       border-top: 1px solid var(--border);
       color: var(--gray);
@@ -452,6 +497,7 @@
     }
 
     .checklist li {
+      font-family: var(--font-body);
       display: flex;
       align-items: center;
       gap: 10px;
@@ -465,6 +511,10 @@
 
     .checklist li.done {
       color: var(--navy);
+    }
+
+    .legacy-hide {
+      display: none;
     }
 
     .ci {
@@ -490,6 +540,216 @@
     }
 
     .c-todo {
+      background: var(--gray-light);
+      color: var(--gray);
+    }
+
+    .phase-banner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 20px 22px;
+      margin: 24px 0;
+      background: #0f172a;
+      border-radius: 14px;
+      border: 1px solid #1e293b;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+    }
+
+    .phase-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4ade80;
+      margin-bottom: 6px;
+    }
+
+    .phase-banner h2 {
+      font-family: var(--font-display);
+      color: white;
+      font-size: 1.2rem;
+      line-height: 1.2;
+      margin: 0 0 6px;
+    }
+
+    .phase-banner p {
+      font-family: var(--font-body);
+      color: #94a3b8;
+      font-size: 0.84rem;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 520px;
+    }
+
+    .phase-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      border-radius: 50px;
+      padding: 8px 13px;
+      background: rgba(37, 99, 235, 0.18);
+      color: #93c5fd;
+      font-size: 0.76rem;
+      font-weight: 700;
+      border: 1px solid rgba(147, 197, 253, 0.24);
+    }
+
+    .latest-box,
+    .manufacturing-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: white;
+      padding: 22px;
+      margin-bottom: 32px;
+    }
+
+    .latest-box {
+      border-left: 4px solid var(--green);
+      background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 72%);
+    }
+
+    .latest-date {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #16a34a;
+      margin-bottom: 7px;
+    }
+
+    .latest-box h3,
+    .manufacturing-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .status-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .status-row {
+      font-family: var(--font-body);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 11px 13px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-size: 0.9rem;
+    }
+
+    .status-row strong {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 50px;
+      padding: 4px 9px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status-pill.done {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .status-pill.wip {
+      background: #dbeafe;
+      color: #2563eb;
+    }
+
+    .status-pill.todo {
+      background: var(--gray-light);
+      color: var(--gray);
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 16px 0 18px;
+    }
+
+    .partner-badge {
+      min-height: 92px;
+      padding: 13px 10px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .partner-badge span {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
+
+    .partner-badge img {
+      max-width: 130px;
+      width: 100%;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .phase-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .timeline-step {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 10px;
+      background: white;
+      font-size: 0.82rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .timeline-step span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-bottom: 7px;
+      background: #dcfce7;
+      color: #16a34a;
+      font-size: 0.68rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timeline-step.pending {
+      color: var(--gray);
+    }
+
+    .timeline-step.pending span {
       background: var(--gray-light);
       color: var(--gray);
     }
@@ -527,13 +787,14 @@
 
     .log-body h4 {
       font-family: var(--font-display);
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       font-weight: 700;
       margin-bottom: 2px;
     }
 
     .log-body p {
-      font-size: 0.78rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
       color: var(--gray);
       margin: 0;
     }
@@ -640,6 +901,16 @@
       .stats {
         flex-wrap: wrap;
       }
+
+      .phase-banner,
+      .status-row {
+        grid-template-columns: 1fr;
+      }
+
+      .partner-grid,
+      .phase-timeline {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -690,13 +961,19 @@
         <a href="sponsor.html" class="btn-ghost">Support this build</a>
       </div>
 
-      <!-- BUILD LOG BANNER -->
-      <div style="margin-top: 24px; padding: 18px 24px; background: #f8fafc; border: 1.5px solid var(--border); border-left: 4px solid var(--blue); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+      <div class="phase-banner">
         <div>
-          <div style="font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 4px;">Wanna check if you can build it?</div>
-          <div style="font-size: 0.9rem; color: var(--gray);">Read our complete architecture journal and component choices.</div>
+          <div class="phase-eyebrow">Current Phase</div>
+          <h2>Mechanical Prototyping &amp; System Integration</h2>
+          <p>The rover electronics have been successfully manufactured and assembled. Development is now focused on 3D printing the structural components, validating the custom motor driver hardware, and preparing for the first full rover assembly.</p>
         </div>
-        <a href="Build%20log/build-log.html" class="btn" style="padding: 10px 20px; font-size: 0.9rem; white-space: nowrap;">Follow the logs here →</a>
+        <div class="phase-chip">Mechanical Prototyping</div>
+      </div>
+
+      <div class="latest-box">
+        <div class="latest-date">Latest Update · July 2026</div>
+        <h3>Manufacturing sponsorship secured</h3>
+        <p>Manufacturing support is now in place from EasyEDA, JLCPCB, and JLC3DP. PCB and PCBA files have been submitted for fabrication, and the team is preparing for mechanical assembly.</p>
       </div>
 
       <!-- STATS -->
@@ -753,7 +1030,24 @@
         <div class="sec">
           <div class="sec-label">Progress</div>
           <h2>Build checklist</h2>
-          <ul class="checklist">
+          <div class="status-list">
+            <div class="status-row"><strong>Mechanical CAD</strong><span class="status-pill done">&#10003; Complete</span></div>
+            <div class="status-row"><strong>Electronics Design</strong><span class="status-pill done">&#10003; Complete</span></div>
+            <div class="status-row"><strong>PCB &amp; PCBA</strong><span class="status-pill done">&#10003; Complete</span></div>
+            <div class="status-row"><strong>Firmware</strong><span class="status-pill todo">&#8987; Upcoming</span></div>
+            <div class="status-row"><strong>Mechanical Assembly</strong><span class="status-pill todo">&#8987; Upcoming</span></div>
+            <div class="status-row"><strong>Field Testing</strong><span class="status-pill todo">&#8987; Upcoming</span></div>
+          </div>
+          <div class="phase-timeline" aria-label="Rover project timeline">
+            <div class="timeline-step"><span>&#10003;</span>Concept</div>
+            <div class="timeline-step"><span>&#10003;</span>CAD</div>
+            <div class="timeline-step"><span>&#10003;</span>Electronics</div>
+            <div class="timeline-step"><span>&#10003;</span>Manufacturing</div>
+            <div class="timeline-step pending"><span>&#9633;</span>Assembly</div>
+            <div class="timeline-step pending"><span>&#9633;</span>Bring-up</div>
+            <div class="timeline-step pending"><span>&#9633;</span>Testing</div>
+          </div>
+          <ul class="checklist legacy-hide">
             <li class="done"><span class="ci c-done">✓</span> Chassis design and hardware selection</li>
             <li class="done"><span class="ci c-done">✓</span> Motor mount and servo bracket redesign</li>
             <li><span class="ci c-wip">~</span> 3D printing structural components</li>
@@ -817,13 +1111,51 @@
         </div>
 
         <div class="sec">
-          <h2>Redesigned parts</h2>
+          <div class="sec-label">Mechanical</div>
+          <h2>CAD and manufacturing files</h2>
+          <p>CAD is complete. Manufacturing files are prepared, and structural components have been submitted for JLC3DP manufacturing.</p>
           <ul class="checklist">
             <li class="done"><span class="ci c-done">✓</span> Motor mounts for JGB37 form factor</li>
             <li class="done"><span class="ci c-done">✓</span> Servo brackets for LDX-277 dimensions</li>
             <li class="done"><span class="ci c-done">✓</span> Steering linkage alignment</li>
             <li class="done"><span class="ci c-done">✓</span> Coupler and hub interfaces</li>
           </ul>
+        </div>
+
+        <div class="sec">
+          <div class="sec-label">Electronics</div>
+          <h2>Custom CAN Motor Driver</h2>
+          <div class="partner-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));" aria-label="Rover electronics partners">
+            <div class="partner-badge">
+              <span>Designed with</span>
+              <img src="images/EasyEDA_Horz_Blue_Trans.png" alt="EasyEDA Pro">
+            </div>
+            <div class="partner-badge">
+              <span>Manufactured by</span>
+              <img src="images/JLCPCB-logo-Blue-Trans.png" alt="JLCPCB">
+            </div>
+          </div>
+          <ul class="checklist">
+            <li class="done"><span class="ci c-done">&#10003;</span> Custom CAN Motor Driver designed</li>
+            <li class="done"><span class="ci c-done">&#10003;</span> PCB completed in EasyEDA Pro</li>
+            <li class="done"><span class="ci c-done">&#10003;</span> BOM finalized</li>
+            <li class="done"><span class="ci c-done">&#10003;</span> CPL finalized</li>
+            <li class="done"><span class="ci c-done">&#10003;</span> Submitted for JLCPCB PCBA manufacturing</li>
+          </ul>
+        </div>
+
+        <div class="sec">
+          <div class="sec-label">Manufacturing</div>
+          <h2>Production status</h2>
+          <div class="manufacturing-card">
+            <h3>Manufacturing Partners</h3>
+            <p>JLCPCB is handling PCB and PCBA manufacturing. JLC3DP is supporting mechanical part manufacturing for the rover structure.</p>
+            <div class="status-list">
+              <div class="status-row"><strong>PCB ordered</strong><span class="status-pill done">&#10003; Submitted</span></div>
+              <div class="status-row"><strong>PCBA ordered</strong><span class="status-pill done">&#10003; Submitted</span></div>
+              <div class="status-row"><strong>Production</strong><span class="status-pill wip">&#8635; In progress</span></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -833,6 +1165,10 @@
           <div class="sec-label">Bill of Materials</div>
           <h2>Printed parts <span style="font-size:0.78rem;font-weight:400;color:var(--gray);margin-left:8px;">~3kg
               filament</span></h2>
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 16px;">
+            <span style="font-size: 0.75rem; color: var(--gray);">Printed with</span>
+            <img src="images/JLC3DP-logo.png" alt="JLC3DP" style="height: 24px; width: auto;">
+          </div>
           <table class="tbl">
             <thead>
               <tr>
@@ -1108,9 +1444,8 @@
             <div class="log-date">May 2026</div>
             <div class="log-body">
               <span class="log-tag" style="background:#dcfce7;color:#16a34a;">Sponsorship</span>
-              <h4>Fiscal sponsorship approved by HCB</h4>
-              <p>Hack Club Bank has officially approved our fiscal sponsorship application, enabling us to accept
-                tax-deductible donations.</p>
+              <h4>Fiscal sponsorship approved by Hack Club</h4>
+              <p>Hack Club approved Team Bumblebee's fiscal sponsorship, enabling us to securely receive sponsor funding and manage payments for manufacturing, components, and other project expenses through Hack Club Bank.</p>
             </div>
           </div>
           <div class="log-item">
@@ -1130,11 +1465,49 @@
             </div>
           </div>
           <div class="log-item">
-            <div class="log-date">Upcoming</div>
+            <div class="log-date">July 2026</div>
+            <div class="log-body">
+              <span class="log-tag" style="background:#dcfce7;color:#16a34a;">Partnership</span>
+              <h4>EasyEDA partnership confirmed</h4>
+              <p>EasyEDA Pro partnership secured for PCB design tooling and project support.</p>
+            </div>
+          </div>
+          <div class="log-item">
+            <div class="log-date">July 2026</div>
+            <div class="log-body">
+              <span class="log-tag" style="background:#dcfce7;color:#16a34a;">Partnership</span>
+              <h4>JLCPCB &amp; JLC3DP partnership confirmed</h4>
+              <p>Manufacturing partnerships secured with JLCPCB for PCB/PCBA fabrication and JLC3DP for structural printed parts.</p>
+            </div>
+          </div>
+          <div class="log-item">
+            <div class="log-date">July 2026</div>
             <div class="log-body">
               <span class="log-tag">Electronics</span>
-              <h4>PCBA design</h4>
-              <p>Motor control board in design phase. Seeking manufacturing support.</p>
+              <h4>PCB submitted for fabrication</h4>
+              <p>Custom CAN motor driver PCB design files submitted to JLCPCB for fabrication.</p>
+            </div>
+          </div>
+          <div class="log-item">
+            <div class="log-date">July 2026</div>
+            <div class="log-body">
+              <span class="log-tag">Electronics</span>
+              <h4>PCBA submitted for assembly</h4>
+              <p>BOM and CPL finalized and submitted to JLCPCB for full SMD assembly. Board production now underway.</p>
+            </div>
+          </div>
+          <div class="log-item">
+            <div class="log-date">Aug 2026</div>
+            <div class="log-body">
+              <span class="log-tag" style="background:#dcfce7;color:#16a34a;">Electronics</span>
+              <h4>PCB and PCBA completed</h4>
+              <p>Motor driver PCB and full SMD assembly received. Electronics manufacturing is complete.</p>
+              <div style="margin-top:12px; border-radius:10px; overflow:hidden; border:1px solid var(--border);">
+                <img src="images/photo_2026-08-08_23-50-40 (2).jpg" alt="Completed PCB" style="width:100%; height:220px; object-fit:cover; object-position:center 40%; display:block;">
+                <div style="padding:10px 12px; background:var(--gray-light); border-top:1px solid #bbf7d0;">
+                  <p style="font-size:0.8rem; font-weight:700; color:#16a34a; margin:0;">⚡ Firmware development and test results will be updated soon.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1147,13 +1520,14 @@
 
       <div class="scard-dark">
         <h4>Support this build</h4>
-        <p>Seeking 3D printing and PCBA manufacturing support to complete the chassis.</p>
+        <p>Manufacturing is underway. New support now helps with assembly, firmware bring-up, and field testing.</p>
         <a href="sponsor.html" class="btn-white">Get in touch</a>
       </div>
 
       <div class="scard">
         <h4>Project info</h4>
         <div class="srow"><span>Status</span><span style="color:#16a34a;">Active</span></div>
+        <div class="srow"><span>Current phase</span><span style="color:#2563eb;">Structural development</span></div>
         <div class="srow"><span>Based on</span><span>Sawppy Rover</span></div>
         <div class="srow"><span>License</span><span>Open source</span></div>
         <div class="srow"><span>Hardware</span><span>Local (BD)</span></div>
@@ -1168,6 +1542,85 @@
         View Repository
       </a>
 
+      <div class="build-log-widget">
+        <h4>Wanna check if you can build it?</h4>
+        <p>Read our complete architecture journal and component choices.</p>
+        <a href="Build%20log/build-log.html" class="btn-blue">Follow the logs here →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECT GALLERY -->
+  <div style="position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 72px 40px;">
+    <div class="sec-label">Project Gallery</div>
+    <h2 style="font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; margin-bottom: 10px;">Rover Development</h2>
+    <p style="font-family: var(--font-body); font-size: 0.9rem; color: var(--gray); line-height: 1.75; max-width: 580px; margin-bottom: 32px;">This isn't just a concept — it's a real engineering project with completed CAD, PCB designs, and an active team.</p>
+    
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-bottom:20px;">
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s;">
+        <img src="images/sawppy-reference.jpg" alt="Rover Design Reference" style="width:100%; height:200px; object-fit:cover; display:block;">
+        <div style="padding:14px;">
+          <h4 style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; margin-bottom:4px;">Rover Design Reference</h4>
+          <p style="font-family:var(--font-body); font-size:0.75rem; color:var(--gray); line-height:1.5; margin:0;">Mechanical architecture inspired by proven open-source rover designs</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s;">
+        <img src="images/CAD assembly screenshot.png" alt="CAD Assembly" style="width:100%; height:200px; object-fit:cover; display:block;">
+        <div style="padding:14px;">
+          <h4 style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; margin-bottom:4px;">CAD Assembly</h4>
+          <p style="font-family:var(--font-body); font-size:0.75rem; color:var(--gray); line-height:1.5; margin:0;">Complete mechanical design with motor mounts, steering, and chassis</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s;">
+        <img src="images/Motor driver PCB.png" alt="Motor Driver PCB" style="width:100%; height:200px; object-fit:cover; display:block;">
+        <div style="padding:14px;">
+          <h4 style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; margin-bottom:4px;">Motor Driver PCB</h4>
+          <p style="font-family:var(--font-body); font-size:0.75rem; color:var(--gray); line-height:1.5; margin:0;">CAN-enabled motor driver designed in EasyEDA Pro</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s;">
+        <img src="images/PCB 3d.png" alt="PCB 3D View" style="width:100%; height:200px; object-fit:cover; display:block;">
+        <div style="padding:14px;">
+          <h4 style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; margin-bottom:4px;">PCB 3D View</h4>
+          <p style="font-family:var(--font-body); font-size:0.75rem; color:var(--gray); line-height:1.5; margin:0;">3D render of the motor driver PCB layout and component placement</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s;">
+        <img src="images/photo_2026-08-06_11-59-16.jpg" alt="Assembled PCB" style="width:100%; height:200px; object-fit:cover; display:block;">
+        <div style="padding:14px;">
+          <h4 style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; margin-bottom:4px;">Assembled PCB</h4>
+          <p style="font-family:var(--font-body); font-size:0.75rem; color:var(--gray); line-height:1.5; margin:0;">Manufactured and assembled motor driver board received from JLCPCB</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s;">
+        <img src="images/photo_2026-08-06_11-59-12.jpg" alt="PCB Close-up" style="width:100%; height:200px; object-fit:cover; display:block;">
+        <div style="padding:14px;">
+          <h4 style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; margin-bottom:4px;">PCB Close-up</h4>
+          <p style="font-family:var(--font-body); font-size:0.75rem; color:var(--gray); line-height:1.5; margin:0;">SMD components assembled on the motor driver board</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s;">
+        <img src="images/photo_2026-08-06_11-59-06.jpg" alt="Board Detail" style="width:100%; height:200px; object-fit:cover; display:block;">
+        <div style="padding:14px;">
+          <h4 style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; margin-bottom:4px;">Board Detail</h4>
+          <p style="font-family:var(--font-body); font-size:0.75rem; color:var(--gray); line-height:1.5; margin:0;">Component detail of the manufactured CAN motor driver</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s;">
+        <img src="images/photo_2026-08-06_11-58-59.jpg" alt="PCB Assembly" style="width:100%; height:200px; object-fit:cover; display:block;">
+        <div style="padding:14px;">
+          <h4 style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; margin-bottom:4px;">PCB Assembly</h4>
+          <p style="font-family:var(--font-body); font-size:0.75rem; color:var(--gray); line-height:1.5; margin:0;">Full board assembly showing the complete PCBA</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s;">
+        <img src="images/photo_2026-08-06_11-58-52.jpg" alt="Motor Driver Boards" style="width:100%; height:200px; object-fit:cover; display:block;">
+        <div style="padding:14px;">
+          <h4 style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; margin-bottom:4px;">Motor Driver Boards</h4>
+          <p style="font-family:var(--font-body); font-size:0.75rem; color:var(--gray); line-height:1.5; margin:0;">Production batch of motor driver boards ready for integration</p>
+        </div>
+      </div>
     </div>
   </div>
 
