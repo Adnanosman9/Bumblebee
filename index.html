@@ -142,6 +142,33 @@
       animation: blink 2s infinite;
     }
 
+    .hero-status {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 100%;
+      background: #0f172a;
+      border: 1px solid rgba(34, 197, 94, 0.28);
+      border-radius: 12px;
+      padding: 8px 12px;
+      color: #e2e8f0;
+      font-size: 0.76rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin: -6px 0 18px;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    .hero-status strong {
+      color: #4ade80;
+      font-weight: 800;
+    }
+
+    .hero-status span {
+      color: #94a3b8;
+    }
+
     @keyframes blink {
 
       0%,
@@ -465,6 +492,51 @@
 
     .pcard.main p {
       color: #94a3b8;
+    }
+
+    .progress-timeline {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 10px;
+      margin: 18px 0 20px;
+    }
+
+    .progress-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 8px 10px;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: #cbd5e1;
+      font-size: 0.73rem;
+      line-height: 1.25;
+    }
+
+    .progress-mark {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      font-weight: 800;
+      background: rgba(34, 197, 94, 0.16);
+      color: #4ade80;
+    }
+
+    .progress-item.upcoming {
+      color: #94a3b8;
+      border-color: rgba(96, 165, 250, 0.16);
+    }
+
+    .progress-item.upcoming .progress-mark {
+      background: rgba(96, 165, 250, 0.14);
+      color: #60a5fa;
     }
 
     .plink {
@@ -1018,6 +1090,57 @@
       border-radius: 4px;
     }
 
+    .sp-partner-block {
+      margin-top: 24px;
+    }
+
+    .sp-partner-label {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+
+    .sp-hcb-logo {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .sp-partner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .sp-partner {
+      min-height: 74px;
+      padding: 12px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.035);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .sp-partner img {
+      max-width: 118px;
+      width: 100%;
+      height: 28px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+
+    .sp-partner span {
+      font-size: 0.66rem;
+      color: #64748b;
+      line-height: 1.25;
+    }
+
     .sp-slots {
       display: flex;
       gap: 8px;
@@ -1084,6 +1207,10 @@
         grid-column: span 1;
       }
 
+      .progress-timeline {
+        grid-template-columns: 1fr;
+      }
+
       .sp-widget {
         grid-template-columns: 1fr;
       }
@@ -1146,9 +1273,13 @@
   <div class="hero">
     <div>
       <div class="tag"><span class="dot"></span> Student team · Bangladesh</div>
+      <div class="hero-status">
+        <strong>Status:</strong>
+        <span>PCBs in production &bull; Mechanical components ready &bull; Open source</span>
+      </div>
       <h1>We build<br><em>open source</em><br>Hardware Projects.</h1>
-      <p>Team Bumblebee is a small student robotics team. We build things, document everything, and put it all on
-        GitHub.</p>
+      <p>Team Bumblebee is a student robotics team turning documented prototypes into real hardware, with electronics
+        manufacturing underway and every file published on GitHub.</p>
       <div class="hero-btns">
         <a href="#projects" class="btn">Our projects →</a>
         <a href="https://github.com/Adnanosman9" target="_blank" class="btn-ghost">GitHub</a>
@@ -1219,6 +1350,23 @@
         <h3>Modular Autonomous Rover</h3>
         <p>Open-source autonomous chassis, modified from Sawppy Rover for locally available hardware. First application:
           agricultural field research in Bangladesh.</p>
+        <div class="progress-timeline" aria-label="Modular Autonomous Rover progress">
+          <div class="progress-item"><span class="progress-mark">&#10003;</span> Mechanical CAD completed</div>
+          <div class="progress-item"><span class="progress-mark">&#10003;</span> CAN Motor Driver designed</div>
+          <div class="progress-item"><span class="progress-mark">&#10003;</span> PCB designed in EasyEDA Pro</div>
+          <div class="progress-item"><span class="progress-mark">&#10003;</span> BOM &amp; CPL finalized</div>
+          <div class="progress-item"><span class="progress-mark">&#10003;</span> PCBA completed</div>
+          <div class="progress-item upcoming"><span class="progress-mark">&#8635;</span> Mechanical assembly</div>
+          <div class="progress-item upcoming"><span class="progress-mark">&#8635;</span> Rover bring-up</div>
+          <div class="progress-item upcoming"><span class="progress-mark">&#8635;</span> Autonomous navigation</div>
+        </div>
+
+        <div style="margin:18px 0 16px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+          <img src="images/photo_2026-08-08_23-50-40 (2).jpg" alt="Rover PCB" style="width:100%; height:340px; object-fit:cover; object-position:center 40%; display:block;">
+          <div style="padding:14px 16px; background:rgba(255,255,255,0.06); border-top:1px solid rgba(74,222,128,0.3);">
+            <p style="font-size:0.88rem; font-weight:700; color:#4ade80; margin:0;">⚡ Firmware development and test results will be updated soon.</p>
+          </div>
+        </div>
         <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
           <div class="plink">View project →</div>
           <div onclick="window.location.href='Build%20log/build-log.html'; event.preventDefault(); event.stopPropagation();" style="font-size: 0.75rem; font-weight: 600; background: #f8fafc; border: 1px solid var(--border); color: var(--navy); padding: 5px 12px; border-radius: 50px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; transition: background 0.15s;" onmouseover="this.style.background='#f1f5f9'" onmouseout="this.style.background='#f8fafc'">
@@ -1273,13 +1421,13 @@
         <p class="role">Founder · Team Lead</p>
         <p class="role" style="margin-top:2px;">Mechanical, Electronics & Software</p>
         <div class="socials">
-          <button type="button" class="soc" onclick="copyEmail(this, 'adnanosman.lead@bumblebee-bd.club')"
+          <button type="button" class="soc" onclick="copyEmail(this, 'adnan.lead.bumblebee@gmail.com')"
             aria-label="Copy Email">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25l-7.07 4.42c-.32.2-.74.2-1.06 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44z" />
             </svg>
-            <span class="copy-tooltip">adnanosman.lead@bumblebee-bd.club copied!</span>
+            <span class="copy-tooltip">adnan.lead.bumblebee@gmail.com copied!</span>
           </button>
           <a href="https://github.com/Adnanosman9" target="_blank" class="soc"><svg width="13" height="13"
               viewBox="0 0 24 24" fill="currentColor">
@@ -1287,6 +1435,32 @@
                 d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
             </svg></a>
           <a href="https://www.facebook.com/adnanosman19" target="_blank" class="soc"><svg width="13" height="13"
+              viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.143v3.24l-1.917.001c-1.504 0-1.796.715-1.796 1.763v2.311h3.587l-.467 3.621h-3.12V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0z" />
+            </svg></a>
+        </div>
+      </div>
+      <div class="tcard" style="flex-shrink:0; width:200px;">
+        <div class="av">KP</div>
+        <h4>Kishor Paul</h4>
+        <p class="role">HR · Co-founder</p>
+        <p class="role" style="margin-top:2px;">Arduino and IoT</p>
+        <div class="socials">
+          <button type="button" class="soc" onclick="copyEmail(this, 'kishorpaul.hr@bumblebee-bd.club')"
+            aria-label="Copy Email">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25l-7.07 4.42c-.32.2-.74.2-1.06 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44z" />
+            </svg>
+            <span class="copy-tooltip">kishorpaul.hr@bumblebee-bd.club copied!</span>
+          </button>
+          <a href="https://github.com/kishor1594" target="_blank" class="soc"><svg width="13" height="13"
+              viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+            </svg></a>
+          <a href="https://www.facebook.com/kishorpaul01" target="_blank" class="soc"><svg width="13" height="13"
               viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.143v3.24l-1.917.001c-1.504 0-1.796.715-1.796 1.763v2.311h3.587l-.467 3.621h-3.12V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0z" />
@@ -1311,6 +1485,14 @@
         <a href="sponsor.html"
           style="display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:600;color:var(--blue);text-decoration:none;">Get
           in touch →</a>
+      </div>
+    </div>
+
+    <!-- Team Photo -->
+    <div style="margin-top:40px; background:#fff; border:1px solid var(--border); border-radius:16px; overflow:hidden;">
+      <img src="images/Team photo.jpg" alt="Team Bumblebee" style="width:100%; height:auto; display:block;">
+      <div style="padding:16px; background:var(--gray-light); text-align:center;">
+        <p style="font-size:0.8rem; color:var(--gray); margin:0; line-height:1.6;">Team Bumblebee at a local hackathon</p>
       </div>
     </div>
   </section>
@@ -1486,9 +1668,28 @@
 
         </div>
 
-        <div style="margin-top: 24px;">
-          <div style="font-size: 0.75rem; color: var(--gray); margin-bottom: 10px;">Fiscally sponsored by</div>
-          <img src="hcb-icon-icon-dark.png" alt="Hack Club Bank" style="height: 36px; object-fit: contain;">
+        <div class="sp-partner-block">
+          <div class="sp-partner-label">Fiscally sponsored by</div>
+          <img src="hcb-icon-icon-dark.png" alt="Hack Club Bank" class="sp-hcb-logo">
+          <div class="sp-partner-label">Current partners</div>
+          <div class="sp-partner-grid" aria-label="Current partners">
+            <div class="sp-partner">
+              <img src="images/EasyEDA_Horz_Blue_Trans.png" alt="EasyEDA">
+              <span>PCB Design Platform</span>
+            </div>
+            <div class="sp-partner">
+              <img src="images/OSHWLab_Horz_Blue_Trans.png" alt="OSHWLab">
+              <span>Hardware Sharing Platform</span>
+            </div>
+            <div class="sp-partner">
+              <img src="images/JLCPCB-logo-Blue-Trans.png" alt="JLCPCB">
+              <span>PCB Manufacturing</span>
+            </div>
+            <div class="sp-partner">
+              <img src="images/JLC3DP-logo.png" alt="JLC3DP">
+              <span>3D Printing Service</span>
+            </div>
+          </div>
         </div>
         <div class="sp-legal">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
